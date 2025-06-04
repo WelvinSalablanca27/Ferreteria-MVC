@@ -409,7 +409,7 @@ public class VistaCompra extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, -1, -1));
-        jPanel1.add(selectorfechaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
+        jPanel1.add(selectorfechaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 130, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
