@@ -129,11 +129,11 @@ public class VistaCompra extends javax.swing.JPanel {
             List<Empleado> empleados = empleadoControlador.obtenerTodosEmpleados();
 
             // Limpiar el combo box por si tiene datos
-            comboEmpleado.removeAllItems();
+            comboEmpleados.removeAllItems();
 
             // Agregar cada categoría al combo box
             for (Empleado e : empleados) {
-                comboEmpleado.addItem(e.getPrimerNombre() + " " + e.getPrimerApellido()); // Mostrar el nombre
+                comboEmpleados.addItem(e.getPrimerNombre() + " " + e.getPrimerApellido()); // Mostrar el nombre
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this,
@@ -198,7 +198,7 @@ public class VistaCompra extends javax.swing.JPanel {
         tablaDetalles = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        comboEmpleado = new javax.swing.JComboBox<>();
+        comboEmpleados = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         textPrecio = new javax.swing.JTextField();
         textBuscar = new javax.swing.JTextField();
@@ -282,8 +282,8 @@ public class VistaCompra extends javax.swing.JPanel {
         jLabel2.setText("Fecha");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 6, -1, -1));
 
-        comboEmpleado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
-        jPanel1.add(comboEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 29, 107, -1));
+        comboEmpleados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
+        jPanel1.add(comboEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 29, 107, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Precio");
@@ -430,7 +430,7 @@ public class VistaCompra extends javax.swing.JPanel {
     private void accionBotonGuardar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonGuardar
         try {
             // Obtener el índice seleccionado de empleados
-            int indiceEmpleado = comboEmpleado.getSelectedIndex();
+            int indiceEmpleado = comboEmpleados.getSelectedIndex();
             if (indiceEmpleado < 0) {
                 JOptionPane.showMessageDialog(this, "Seleccione un empleado.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
@@ -562,7 +562,7 @@ public class VistaCompra extends javax.swing.JPanel {
                 }
                 if (indiceEmpleado != -1) {
                     idEmpleadoSeleccionado = compraSeleccionada.getIdEmpleado();
-                    comboEmpleado.setSelectedIndex(indiceEmpleado);
+                    comboEmpleados.setSelectedIndex(indiceEmpleado);
                 } else {
                     JOptionPane.showMessageDialog(this, "Empleado no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
@@ -639,7 +639,7 @@ public class VistaCompra extends javax.swing.JPanel {
     }//GEN-LAST:event_textBuscarKeyPressed
 
     private void accionBotonActualizar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonActualizar
-          try {
+         try {
             // Obtener el índice de la fila seleccionada en tablaVentas
             int filaSeleccionada = tablaCompras.getSelectedRow();
             if (filaSeleccionada == -1) {
@@ -652,7 +652,7 @@ public class VistaCompra extends javax.swing.JPanel {
             int idCompra = (int) modelVentas.getValueAt(filaSeleccionada, 0);
 
             // Obtener el índice seleccionado de empleados
-            int indiceEmpleado = comboEmpleado.getSelectedIndex();
+            int indiceEmpleado = comboEmpleados.getSelectedIndex();
             if ( indiceEmpleado < 0) {
                 JOptionPane.showMessageDialog(this, "Seleccione un empleado.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
@@ -842,7 +842,7 @@ public class VistaCompra extends javax.swing.JPanel {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JComboBox<String> comboEmpleado;
+    private javax.swing.JComboBox<String> comboEmpleados;
     private javax.swing.JComboBox<String> comboProductos;
     private javax.swing.JLabel hora;
     private javax.swing.JButton jButton1;
