@@ -11,6 +11,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
      */
     public VistaPrincipal() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         Opciones.addTab("Categorias", new VistaCategorias());
         Opciones.addTab("Cliente", new VistaClientes());
         Opciones.addTab("Compras", new VistaCompra());
@@ -19,7 +20,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         Opciones.addTab("Usuarios", new VistaUsuarios());
         Opciones.addTab("Productos", new VistaProductos());
         Opciones.addTab("Consultas con IA", new VistaConsultasDinamicas());
-
     }
 
     /**
@@ -35,6 +35,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                accionCerrarVistaPrincipal(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -49,12 +54,19 @@ public class VistaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Opciones, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+                .addComponent(Opciones, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void accionCerrarVistaPrincipal(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_accionCerrarVistaPrincipal
+
+        setVisible(false); // Oculta VistaPrincipal
+        VistaInicioSesion inicioSesion = new VistaInicioSesion();
+        inicioSesion.setVisible(true); // Muestra el inicio de sesión
+    }//GEN-LAST:event_accionCerrarVistaPrincipal
 
     /**
      * @param args the command line arguments
